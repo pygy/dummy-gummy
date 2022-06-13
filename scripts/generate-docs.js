@@ -1,13 +1,15 @@
 "use strict"
 
-const {promises: fs} = require("fs")
+const {promises: fs} = require("node:fs")
 const path = require("path")
 const {promisify} = require("util")
+const {execFileSync} = require("child_process")
+
 const {marked} = require("marked")
 const rimraf = promisify(require("rimraf"))
-const {execFileSync} = require("child_process")
 const escapeRegExp = require("escape-string-regexp")
 const HTMLMinifier = require("html-minifier")
+
 const upstream = require("./_upstream")
 const version = require("../package.json").version
 
