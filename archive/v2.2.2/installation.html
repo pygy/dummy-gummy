@@ -92,42 +92,47 @@
 <hr>
 <h3 id=quick-start-with-webpack><a href=#quick-start-with-webpack>Quick start with Webpack</a></h3>
 <ol>
-<li><p>Initialize the directory as an npm package</p>
+<li>Initialize the directory as an npm package</li>
+</ol>
 <pre><code class=language-bash>$ npm init --yes
 </code></pre>
-</li>
-<li><p>install required tools</p>
+<ol start=2>
+<li>install required tools</li>
+</ol>
 <pre><code class=language-bash>$ npm install mithril --save
 $ npm install webpack webpack-cli --save-dev
 </code></pre>
-</li>
-<li><p>Add a &quot;start&quot; entry to the scripts section in <code>package.json</code>.</p>
+<ol start=3>
+<li>Add a &quot;start&quot; entry to the scripts section in <code>package.json</code>.</li>
+</ol>
 <pre><code class=language-json>{
- &quot;...&quot;: &quot;...&quot;,
- &quot;scripts&quot;: {
-     &quot;start&quot;: &quot;webpack ./src/index.js --output-path ./bin --watch&quot;
- }
+    &quot;...&quot;: &quot;...&quot;,
+    &quot;scripts&quot;: {
+        &quot;start&quot;: &quot;webpack ./src/index.js --output-path ./bin --watch&quot;
+    }
 }
 </code></pre>
-</li>
-<li><p>Create <code>src/index.js</code> file.</p>
+<ol start=4>
+<li>Create <code>src/index.js</code> file.</li>
+</ol>
 <pre><code class=language-javascript>import m from &quot;mithril&quot;;
 m.render(document.body, &quot;hello world&quot;);
 </code></pre>
-</li>
-<li><p>create <code>index.html</code></p>
+<ol start=5>
+<li>create <code>index.html</code></li>
+</ol>
 <pre><code class=language-html>&lt;!DOCTYPE html&gt;
 &lt;body&gt;
- &lt;script src=&quot;bin/main.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;bin/main.js&quot;&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
-</li>
-<li><p>run bundler</p>
+<ol start=6>
+<li>run bundler</li>
+</ol>
 <pre><code class=language-bash>$ npm start
 </code></pre>
-</li>
-<li><p>open <code>index.html</code> in a browser</p>
-</li>
+<ol start=7>
+<li>open <code>index.html</code> in a browser</li>
 </ol>
 <p>Optionally, you can include Mithril.js as a global variable using Webpack&#39;s provide plugin, to avoid including <code>import m from &quot;mithril&quot;</code> across a large number of files:</p>
 <pre><code class=language-js>plugins: [
@@ -228,9 +233,9 @@ npm install mithril --save
 npm install budo -g
 
 # 2) add this line into the scripts section in package.json
-#    &quot;scripts&quot;: {
-#        &quot;start&quot;: &quot;budo --live --open index.js&quot;
-#    }
+#	&quot;scripts&quot;: {
+#		&quot;start&quot;: &quot;budo --live --open index.js&quot;
+#	}
 
 # 3) create an `index.js` file
 

@@ -226,7 +226,7 @@ module.exports = {
 </code></pre>
 <h4 id=making-m-accessible-globally><a href=#making-m-accessible-globally>Making <code>m</code> accessible globally</a></h4>
 <p>In order to access <code>m</code> globally from all your project first import <code>webpack</code> in your <code>webpack.config.js</code> like this:</p>
-<pre><code>const webpack = require(&#39;webpack&#39;)
+<pre><code class=language-js>const webpack = require(&#39;webpack&#39;)
 </code></pre>
 <p>Then create a new plugin in the <code>plugins</code> property of the Webpack configuration object:</p>
 <pre><code class=language-js>{
@@ -246,7 +246,7 @@ module.exports = {
 <p>Similarly, React always uses the camel-cased style property names exposed in the DOM via properties of <code>elem.style</code> (like <code>cssHeight</code> and <code>backgroundColor</code>). Mithril supports both that and the kebab-cased CSS property names (like <code>height</code> and <code>background-color</code>) and idiomatically prefers the latter. Only <code>cssHeight</code>, <code>cssFloat</code>, and vendor-prefixed properties differ in more than case.</p>
 <h4 id=dom-events><a href=#dom-events>DOM events</a></h4>
 <p>React upper-cases the first character of all event handlers: <code>onClick</code> listens for <code>click</code> events and <code>onSubmit</code> for <code>submit</code> events. Some are further altered as they&#39;re multiple words concatenated together. For instance, <code>onMouseMove</code> listens for <code>mousemove</code> events. Mithril does not do this case mapping but instead just prepends <code>on</code> to the native event, so you&#39;d add listeners for <code>onclick</code> and <code>onmousemove</code> to listen to those two events respectively. This corresponds much more closely to HTML&#39;s naming scheme and is much more intuitive if you come from an HTML or vanilla DOM background.</p>
-<p>React supports scheduling event listeners during the capture phase (in the first pass, out to in, as opposed to the default bubble phase going in to out in the second pass) by appending <code>Capture</code> to that event. Mithril currently lacks such functionality, but it could gain this in the future. If this is necessary you can manually add and remove your own listeners in <a href=lifecycle.html>lifecycle hooks</a>.</p>
+<p>React supports scheduling event listeners during the capture phase (in the first pass, out to in, as opposed to the default bubble phase going in to out in the second pass) by appending <code>Capture</code> to that event. Mithril currently lacks such functionality, but it could gain this in the future. If this is necessary you can manually add and remove your own listeners in <a href=lifecycle-methods.html>lifecycle hooks</a>.</p>
 <hr>
 <h3 id=jsx-vs-hyperscript><a href=#jsx-vs-hyperscript>JSX vs hyperscript</a></h3>
 <p>JSX and hyperscript are two different syntaxes you can use for specifying vnodes, and they have different tradeoffs:</p>

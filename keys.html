@@ -299,10 +299,10 @@ function Boxes() {
      var nextKey = 0
 
      function add() {
--        boxes.push({color: getColor()})
-+        var key = nextKey
-+        nextKey++
-+        boxes.push({key: key, color: getColor()})
+-		boxes.push({color: getColor()})
++		var key = nextKey
++		nextKey++
++		boxes.push({key: key, color: getColor()})
      }
 
      function remove(box) {
@@ -317,7 +317,7 @@ function Boxes() {
                  m(&quot;.container&quot;, boxes.map(function(box, i) {
                      return m(&quot;.box&quot;,
                          {
-+                            key: box.key,
++							key: box.key,
                              &quot;data-color&quot;: box.color,
                              onclick: function() { remove(box) },
                          },

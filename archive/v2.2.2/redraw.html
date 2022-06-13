@@ -33,7 +33,6 @@
 <li><a href=mount.html>m.mount</a></li>
 <li><a href=route.html>m.route</a></li>
 <li><a href=request.html>m.request</a></li>
-<li><a href=jsonp.html>m.jsonp</a></li>
 <li><a href=parseQueryString.html>m.parseQueryString</a></li>
 <li><a href=buildQueryString.html>m.buildQueryString</a></li>
 <li><a href=buildPathname.html>m.buildPathname</a></li>
@@ -50,7 +49,6 @@
 <li><a href=#how-it-works>How it works</a></li>
 </ul>
 </li>
-<li><a href=promise.html>Promise</a></li>
 </ul>
 </li>
 <li>Optional<ul>
@@ -58,14 +56,14 @@
 </ul>
 </li>
 <li>Tooling<ul>
-<li><a href=https://github.com/MithrilJS/mithril.js/blob/master/ospec>Ospec</a></li>
+<li><a href=https://github.com/MithrilJS/ospec>Ospec</a></li>
 </ul>
 </li>
 </ul>
 <hr>
 <h3 id=description><a href=#description>Description</a></h3>
 <p>Updates the DOM after a change in the application data layer.</p>
-<p>You DON&#39;T need to call it if data is modified within the execution context of an event handler defined in a Mithril.js view, or after request completion when using <code>m.request</code>/<code>m.jsonp</code>. The <a href=autoredraw.html>autoredraw</a> system, which is built on top of <code>m.redraw()</code> will take care of it.</p>
+<p>You DON&#39;T need to call it if data is modified within the execution context of an event handler defined in a Mithril.js view, or after request completion when using <code>m.request</code>. The <a href=autoredraw.html>autoredraw</a> system, which is built on top of <code>m.redraw()</code> will take care of it.</p>
 <p>You DO need to call it in <code>setTimeout</code>/<code>setInterval</code>/<code>requestAnimationFrame</code> callbacks, or callbacks from 3rd party libraries.</p>
 <hr>
 <h3 id=signature><a href=#signature>Signature</a></h3>

@@ -33,7 +33,6 @@
 <li><a href=mount.html>m.mount</a></li>
 <li><a href=route.html>m.route</a></li>
 <li><a href=request.html>m.request</a></li>
-<li><a href=jsonp.html>m.jsonp</a></li>
 <li><a href=parseQueryString.html>m.parseQueryString</a></li>
 <li><a href=buildQueryString.html>m.buildQueryString</a></li>
 <li><strong><a href=buildPathname.html>m.buildPathname</a></strong><ul>
@@ -46,7 +45,6 @@
 <li><a href=trust.html>m.trust</a></li>
 <li><a href=fragment.html>m.fragment</a></li>
 <li><a href=redraw.html>m.redraw</a></li>
-<li><a href=promise.html>Promise</a></li>
 </ul>
 </li>
 <li>Optional<ul>
@@ -54,7 +52,7 @@
 </ul>
 </li>
 <li>Tooling<ul>
-<li><a href=https://github.com/MithrilJS/mithril.js/blob/master/ospec>Ospec</a></li>
+<li><a href=https://github.com/MithrilJS/ospec>Ospec</a></li>
 </ul>
 </li>
 </ul>
@@ -98,7 +96,7 @@
 <p><a href=signatures.html>How to read signatures</a></p>
 <hr>
 <h3 id=how-it-works><a href=#how-it-works>How it works</a></h3>
-<p>The <code>m.buildPathname</code> creates a <a href=paths.html>path name</a> from a path template and a parameters object. It&#39;s useful for building URLs, and it&#39;s what <a href=route.html><code>m.route</code></a>, <a href=request.html><code>m.request</code></a>, and <a href=jsonp.html><code>m.jsonp</code></a> all use internally to interpolate paths. It uses <a href=buildQueryString.html><code>m.buildQueryString</code></a> to generate the query parameters to append to the path name.</p>
+<p>The <code>m.buildPathname</code> creates a <a href=paths.html>path name</a> from a path template and a parameters object. It&#39;s useful for building URLs, and it&#39;s what <a href=route.html><code>m.route</code></a> and <a href=request.html><code>m.request</code></a> use internally to interpolate paths. It uses <a href=buildQueryString.html><code>m.buildQueryString</code></a> to generate the query parameters to append to the path name.</p>
 <pre><code class=language-javascript>var pathname = m.buildPathname(&quot;/path/:id&quot;, {id: &quot;user&quot;, a: 1, b: 2})
 
 // pathname is &quot;/path/user?a=1&amp;b=2&quot;

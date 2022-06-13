@@ -131,7 +131,7 @@ var Toggler = {
 }
 </code></pre>
 <p><code>vnode.dom</code> points to the root DOM element of the component (<code>&lt;div class=&quot;fancy&quot;&gt;</code>). We use the classList API here to add an <code>exit</code> class to <code>&lt;div class=&quot;fancy&quot;&gt;</code>.</p>
-<p>Then we return a <a href=promise.html>Promise</a> that resolves when the <code>animationend</code> event fires. When we return a promise from <code>onbeforeremove</code>, Mithril.js waits until the promise is resolved and only then it removes the element. In this case, it waits for the exit animation to finish.</p>
+<p>Then we return a Promise that resolves when the <code>animationend</code> event fires. When we return a promise from <code>onbeforeremove</code>, Mithril.js waits until the promise is resolved and only then it removes the element. In this case, it waits for the exit animation to finish.</p>
 <p>We can verify that both the enter and exit animations work by mounting the <code>Toggler</code> component:</p>
 <pre><code class=language-javascript>m.mount(document.body, Toggler)
 </code></pre>

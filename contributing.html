@@ -102,12 +102,11 @@
 <li>submit a pull request (go to the pull requests tab in GitHub, click the green button and select your feature branch)</li>
 </ul>
 <h2 id=i&#39;m-submitting-a-pr-how-do-i-run-tests?><a href=#i&#39;m-submitting-a-pr-how-do-i-run-tests?>I&#39;m submitting a PR. How do I run tests?</a></h2>
-<p>Assuming you have forked this repo, you can open the <code>index.html</code> file in a module&#39;s <code>tests</code> folder and look at console output to see only tests for that module, or you can run <code>ospec/bin/ospec</code> from the command line to run all tests.</p>
+<p>After having run <code>npm install</code> (a one-time operation), run <code>npm run test</code> from the command line to run all tests.</p>
 <p>While testing, you can modify a test to use <code>o.only(description, test)</code> instead of <code>o(description, test)</code> if you wish to run only a specific test to speed up your debugging experience. Don&#39;t forget to remove the <code>.only</code> after you&#39;re done!</p>
-<p>There is no need to <code>npm install</code> anything in order to run the test suite, however NodeJS is required to run the test suite from the command line. You do need to <code>npm install</code> if you want to lint or get a code coverage report though.</p>
 <h2 id=how-do-i-build-mithriljs?><a href=#how-do-i-build-mithriljs?>How do I build Mithril.js?</a></h2>
 <p>If all you&#39;re trying to do is run examples in the codebase, you don&#39;t need to build Mithril.js, you can just open the various html files and things should just work.</p>
-<p>To generate the bundled file for testing, run <code>npm run dev</code> from the command line. To generate the minified file, run <code>npm run build</code>. There is no need to <code>npm install</code> anything, but NodeJS is required to run the build scripts.</p>
+<p>To generate the bundled file for testing, run <code>npm run dev</code> from the command line. To generate the minified file, run <code>npm run build</code>.</p>
 <h2 id=is-there-a-style-guide?><a href=#is-there-a-style-guide?>Is there a style guide?</a></h2>
 <p>Yes, there&#39;s an <code>eslint</code> configuration, but it&#39;s not strict about formatting at all. If your contribution passes <code>npm run lint</code>, it&#39;s good enough for a PR (and it can still be accepted even if it doesn&#39;t pass).</p>
 <p>Spacing and formatting inconsistencies may be fixed after the fact, and we don&#39;t want that kind of stuff getting in the way of contributing.</p>

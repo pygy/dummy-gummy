@@ -51,7 +51,6 @@
 <li><a href=#avoid-anti-patterns>Avoid anti-patterns</a></li>
 </ul>
 </li>
-<li><a href=jsonp.html>m.jsonp</a></li>
 <li><a href=parseQueryString.html>m.parseQueryString</a></li>
 <li><a href=buildQueryString.html>m.buildQueryString</a></li>
 <li><a href=buildPathname.html>m.buildPathname</a></li>
@@ -59,7 +58,6 @@
 <li><a href=trust.html>m.trust</a></li>
 <li><a href=fragment.html>m.fragment</a></li>
 <li><a href=redraw.html>m.redraw</a></li>
-<li><a href=promise.html>Promise</a></li>
 </ul>
 </li>
 <li>Optional<ul>
@@ -67,13 +65,13 @@
 </ul>
 </li>
 <li>Tooling<ul>
-<li><a href=https://github.com/MithrilJS/mithril.js/blob/master/ospec>Ospec</a></li>
+<li><a href=https://github.com/MithrilJS/ospec>Ospec</a></li>
 </ul>
 </li>
 </ul>
 <hr>
 <h3 id=description><a href=#description>Description</a></h3>
-<p>Makes XHR (aka AJAX) requests, and returns a <a href=promise.html>promise</a></p>
+<p>Makes XHR (aka AJAX) requests, and returns a promise</p>
 <pre><code class=language-javascript>m.request({
     method: &quot;PUT&quot;,
     url: &quot;/api/v1/users/:id&quot;,
@@ -253,7 +251,7 @@
     console.log(users)
 })
 </code></pre>
-<p>A call to <code>m.request</code> returns a <a href=promise.html>promise</a> and triggers a redraw upon completion of its promise chain.</p>
+<p>A call to <code>m.request</code> returns a promise and triggers a redraw upon completion of its promise chain.</p>
 <p>By default, <code>m.request</code> assumes the response is in JSON format and parses it into a JavaScript object (or array).</p>
 <p>If the HTTP response status code indicates an error, the returned Promise will be rejected. Supplying an extract callback will prevent the promise rejection.</p>
 <hr>
@@ -562,7 +560,7 @@ function parseCSV(data) {
 <li><code>XMLHttpRequest</code> is supported by all browsers, whereas <code>fetch()</code> is not supported by Internet Explorer and older Android (prior to 5.0 Lollipop).</li>
 </ul>
 <p>Currently, due to lack of browser support, <code>fetch()</code> typically requires a <a href=https://github.com/github/fetch>polyfill</a>, which is over 11kb uncompressed - nearly three times larger than Mithril.js&#39; XHR module.</p>
-<p>Despite being much smaller, Mithril.js&#39; XHR module supports many important and not-so-trivial-to-implement features like <a href=#dynamic-urls>URL interpolation</a>, querystring serialization and <a href=jsonp.html>JSON-P requests</a>, in addition to its ability to integrate seamlessly to Mithril.js&#39; autoredrawing subsystem. The <code>fetch</code> polyfill does not support any of those, and requires extra libraries and boilerplates to achieve the same level of functionality.</p>
+<p>Despite being much smaller, Mithril.js&#39; XHR module supports many important and not-so-trivial-to-implement features like <a href=#dynamic-urls>URL interpolation</a> and querystring serialization in addition to its ability to integrate seamlessly to Mithril.js&#39; autoredrawing subsystem. The <code>fetch</code> polyfill does not support any of those, and requires extra libraries and boilerplates to achieve the same level of functionality.</p>
 <p>In addition, Mithril.js&#39; XHR module is optimized for JSON-based endpoints and makes that most common case appropriately terse - i.e. <code>m.request(url)</code> - whereas <code>fetch</code> requires an additional explicit step to parse the response data as JSON: <code>fetch(url).then(function(response) {return response.json()})</code></p>
 <p>The <code>fetch()</code> API does have a few technical advantages over <code>XMLHttpRequest</code> in a few uncommon cases:</p>
 <ul>
@@ -573,7 +571,7 @@ function parseCSV(data) {
 <hr>
 <h3 id=avoid-anti-patterns><a href=#avoid-anti-patterns>Avoid anti-patterns</a></h3>
 <h4 id=promises-are-not-the-response-data><a href=#promises-are-not-the-response-data>Promises are not the response data</a></h4>
-<p>The <code>m.request</code> method returns a <a href=promise.html>Promise</a>, not the response data itself. It cannot return that data directly because an HTTP request may take a long time to complete (due to network latency), and if JavaScript waited for it, it would freeze the application until the data was available.</p>
+<p>The <code>m.request</code> method returns a <code>Promise</code>, not the response data itself. It cannot return that data directly because an HTTP request may take a long time to complete (due to network latency), and if JavaScript waited for it, it would freeze the application until the data was available.</p>
 <pre><code class=language-javascript>// AVOID
 var users = m.request(&quot;/api/v1/users&quot;)
 console.log(&quot;list of users:&quot;, users)
